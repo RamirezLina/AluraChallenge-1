@@ -1,3 +1,16 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+	--main-color: rgba(243, 245, 252, 1);
+	background-color: var(--main-color);
+	font-size: 10px;
+	font-family: 'Inter', sans-serif;
+}
+
+html {
+	min-height: 100%;
+	width: 100%;
+}
