@@ -9,7 +9,7 @@
 		<meta name="og:image" content="./assets/icons/favicon.svg" />
 		<title>Encryptor Arequipie</title>
 		<link rel="icon" href="./assets/icons/favicon.svg" type="image/x-icon" />
-		<!-- <link rel="stylesheet" href="./assets/css/index.css" /> -->
+		<link rel="stylesheet" href="./css/index.css" />
 	</head>
 	<header>
     <img src="./assets/icons/alura.svg" alt="Alura logo" />
@@ -18,12 +18,13 @@
     <article>
       <input type="text" id="user-text" required 
       placeholder="Ingrese el texto aqui"
-      pattern="/[a-z0-9] "
+      pattern="/[a-z0-9]"
+      
       title="Solo letras minúsculas y sin acentos"/> 
       <img src="./assets/icons/exclamation.svg" alt="Girl with a magnifying glass looking a diamond" />
       <p>Solo letras minúsculas y sin acentos</p>
-
-
+      <button id="btn-encrypt">Encriptar</button>
+      <button id="btn-decrypt">Desencriptar</button>
     </article>
 
     <aside>
