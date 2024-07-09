@@ -84,20 +84,20 @@ body {
 	padding-right: 5dvw;
 	margin-top: 20px;
 	transition-delay: 0.4s;
+}
 
-	button {
-		width: 20dvw;
-		height: 45px;
-		border-radius: 15px;
-		font-size: 1.6rem;
-		border-width: 1px;
-		border-color: var(--blue-color);
-	}
+button {
+	width: 20dvw;
+	height: 45px;
+	border-radius: 15px;
+	font-size: 1.6rem;
+	border-width: 1px;
+	border-color: var(--blue-color);
+}
 
-	button:hover {
-		scale: 1.08;
-		cursor: pointer;
-	}
+button:hover {
+	scale: 1.08;
+	cursor: pointer;
 }
 
 .btn-encrypt {
