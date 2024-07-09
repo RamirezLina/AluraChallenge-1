@@ -110,6 +110,6 @@ button:hover {
 	background-color: var(--gray-color);
 }
 
-#copy-button {
+.unavailable {
 	display: none;
 }
