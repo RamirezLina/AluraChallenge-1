@@ -2,21 +2,43 @@ let inputText = "";
 let resultText = "";
 
 
+
 function encryptText() {
   inputText = document.querySelector("textarea").value;
-  checkTest(inputText);
-  const clave = "ClaveSecreta123";
+  if (!checkText(inputText)) return;
   resultText = inputText.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
   setResultText();
   limpiarCaja();
   return;
 }
 
-function checkTest(inputText) {
-  const regex = /[a-z0-9]/;
-  if (regex.test(inputText)) return;
-  alert("Solo se permiten letras minúsculas y sin acentos");
-  return;
+function checkText(inputText) {
+  const regex = /^[a-z\s]+$/;
+
+  if (!inputText) {
+    Swal.fire({
+      title: "No ha ingresado texto",
+      icon: 'error',
+      confirmButtonText: 'Ok',
+      allowEscapeKey: true,
+      confirmButtonColor: "#0a3871",
+    })
+    return false;
+  }
+  if (regex.test(inputText)) return true;
+
+  Swal.fire({
+    title: 'Solo se permiten letras minúsculas y sin acentos',
+    icon: 'error',
+    confirmButtonText: 'Try again',
+    allowEscapeKey: true,
+    confirmButtonColor: "#0a3871",
+
+
+  })
+  limpiarCaja();
+  return false;
+
 }
 
 function limpiarCaja() {
@@ -37,6 +59,6 @@ function setResultText() {
   document.getElementById('image').classList.add('unavailable');
   document.querySelector("h3").classList.add('unavailable');
   document.getElementById('copy-button').classList.remove('unavailable');
-  document.getElementById('copy-button').setAttribute('disabled', false);
+  document.getElementById('copy-button').removeAttribute('disabled');
   document.getElementById('output-box').textContent = resultText;
 }
