@@ -109,3 +109,7 @@ button:hover {
 	color: var(--blue-color);
 	background-color: var(--gray-color);
 }
+
+#copy-button {
+	display: none;
+}
