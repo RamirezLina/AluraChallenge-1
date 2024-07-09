@@ -16,5 +16,5 @@
 
 .footer_copyright {
 	padding-block: 6px;
-	background-color: rgb(10, 56, 113);
+	background-color: var(--blue-color);
 }
