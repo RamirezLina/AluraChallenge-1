@@ -62,3 +62,12 @@ function setResultText() {
   document.getElementById('copy-button').removeAttribute('disabled');
   document.getElementById('output-box').textContent = resultText;
 }
+
+const copyText = async () => {
+  try {
+    await navigator.clipboard.writeText(resultText);
+    console.log('Contenido copiado al portapapeles');
+  } catch (err) {
+    console.error('Error al copiar: ', err);
+  }
+}
