@@ -1,7 +1,6 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-@import url(tablet-resp.css);
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
@@ -17,38 +16,49 @@ html,
 body {
 	min-height: 100%;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .main {
 	display: flex;
-	height: calc(100dvh - 75.7px - 90.7px);
+	min-height: calc(100dvh - 75.7px - 90.7px);
 	padding-right: 50px;
 	padding-left: 15dvw;
 	gap: 30px;
 }
 
-.main__input {
-	flex: 1;
-}
-
 .main__result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: white;
 	border-radius: 32px;
 	width: 30dvw;
-	height: 90%;
-	align-content: center;
+	max-height: 75dvh;
 	text-align: center;
 	box-shadow: 2px 8px 8px rgba(128, 128, 128, 0.25);
-	position: relative;
+}
+
+.main__result-out-button {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .main__image {
 	width: 95%;
-	height: 35%;
+	height: 45%;
 }
 
 .main__result-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	margin: 40px;
+	height: auto;
+
 	h3 {
 		font-size: 2.4rem;
 	}
@@ -56,6 +66,8 @@ body {
 	p {
 		margin: 20px;
 		font-size: 1.6rem;
+		object-fit: contain;
+		overflow-wrap: anywhere;
 	}
 }
 
@@ -83,10 +95,10 @@ body {
 
 .main__buttons {
 	display: flex;
-	justify-content: space-between;
-	padding-right: 5dvw;
+	flex-direction: row;
 	margin-top: 20px;
 	transition-delay: 0.4s;
+	justify-content: space-evenly;
 }
 
 button {
@@ -114,11 +126,49 @@ button:hover {
 }
 
 #copy-button {
-	position: absolute;
-	bottom: 10%;
-	left: 17%;
+	margin-top: 20px;
 }
 
 .unavailable {
 	display: none;
+}
+
+@media (480px < width <= 800px) {
+	.main {
+		flex-direction: column;
+	}
+	button {
+		width: 30dvw;
+	}
+
+	.main__image {
+		display: none;
+	}
+
+	.main__result {
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	.main__input {
+		height: 55dvh;
+		width: 100%;
+	}
+
+	.main__input-box {
+		flex: 1;
+	}
+
+	.main__input {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#copy-button {
+		margin-bottom: 20px;
+	}
+
+	.main__result-text {
+		margin-bottom: 10px;
+	}
 }
