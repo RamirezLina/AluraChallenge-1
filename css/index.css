@@ -133,7 +133,7 @@ button:hover {
 	display: none;
 }
 
-@media (480px < width <= 800px) {
+@media (width <= 800px) {
 	.main {
 		flex-direction: column;
 	}
@@ -170,5 +170,21 @@ button:hover {
 
 	.main__result-text {
 		margin-bottom: 10px;
+	}
+}
+
+@media (width <= 480px) {
+	:root {
+		font-size: 8px;
+	}
+
+	.main__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	button {
+		width: 65dvw;
 	}
 }
